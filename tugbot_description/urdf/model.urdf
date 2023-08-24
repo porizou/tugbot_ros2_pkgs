@@ -1,0 +1,238 @@
+<?xml version="1.0" ?>
+<robot name="tugbot">
+	<link name="base_link">
+		<origin rpy="0 0 0" xyz="0 0 0"/>
+		<visual>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<geometry>
+				<mesh filename="package://tugbot_description/meshes/base/tugbot_simp.dae"/>
+			</geometry>
+		</visual>
+		<visual>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<geometry>
+				<mesh filename="package://tugbot_description/meshes/base/movai_logo.dae"/>
+			</geometry>
+			<material name="">
+				<color rgba="1.0 1.0 1.0 1.0"/>
+			</material>
+		</visual>
+		<visual>
+			<origin rpy="0 1.57079632679 0" xyz="-0.1 0 0.1945"/>
+			<geometry>
+				<mesh filename="package://tugbot_description/meshes/base/movai-logo.png"/>
+			</geometry>
+			<material name="">
+				<color rgba="0.0 0.0 0 1"/>
+			</material>
+		</visual>
+		<visual>
+			<origin rpy="0 1.57079632679 0" xyz="-0.099 0 0.195"/>
+			<geometry>
+				<mesh filename="file://"/>
+			</geometry>
+			<material name="">
+				<color rgba="1 0.5 0 0.5"/>
+			</material>
+		</visual> 
+	</link>
+	<link name="imu_link">
+		<origin rpy="0 0 -1.57" xyz="0.14 0.02 0.25"/>
+	</link>
+	<joint name="imu_link_joint" type="fixed">
+		<origin rpy="0 0 -1.57" xyz="0.14 0.02 0.25"/>
+		<child link="imu_link"/>
+		<parent link="base_link"/>
+	</joint>
+
+	<link name="warnign_light">
+		<origin rpy="0 0 0" xyz="-0.185 0 0.46"/>
+		<inertial>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<mass value="0.1"/>
+			<inertia ixx="0.000016875" ixy="0" ixz="0" iyy="0.00000001" iyz="0" izz="0.000016875"/>
+		</inertial>
+	</link>
+	<joint name="warnign_light_joint" type="fixed">
+		<origin rpy="0 0 0" xyz="-0.185 0 0.46"/>
+		<child link="warnign_light"/>
+		<parent link="base_link"/>
+		<axis xyz="0 0 1"/>
+		<limit effort="1000" velocity="20.0"/>
+	</joint>
+
+	<link name="camera_front">
+		<origin rpy="0 0 0" xyz="0.0553 0 0.4323"/>
+	</link>
+	<joint name="camera_front_joint" type="fixed">
+		<origin rpy="0 0 0" xyz="0.0553 0 0.4323"/>
+		<child link="camera_front"/>
+		<parent link="base_link"/>
+	</joint>
+
+	<link name="camera_back">
+		<origin rpy="0 0 3.141592654" xyz="-0.241 0 0.2303"/>
+	</link>
+	<joint name="camera_back_joint" type="fixed">
+		<origin rpy="0 0 3.141592654" xyz="-0.241 0 0.2303"/>
+		<child link="camera_back"/>
+		<parent link="base_link"/>
+	</joint>
+
+	<link name="scan_front">
+		<origin rpy="0 0 0" xyz="0.221 0 0.1404"/>
+	</link>
+	<joint name="scan_front_joint" type="fixed">
+		<origin rpy="0 0 0" xyz="0.221 0 0.1404"/>
+		<child link="scan_front"/>
+		<parent link="base_link"/>
+	</joint>
+
+	<link name="scan_back">
+		<origin rpy="0 0 3.141592654" xyz="-0.2075 0 0.205"/>
+	</link>
+	<joint name="scan_back_joint" type="fixed">
+		<origin rpy="0 0 3.141592654" xyz="-0.2075 0 0.205"/>
+		<child link="scan_back"/>
+		<parent link="base_link"/>
+	</joint>
+
+	<link name="scan_omni">
+		<origin rpy="0 0 0" xyz="-0.1855 0 0.5318"/>
+		<visual>
+			<origin rpy="0 0 0" xyz="0 0 -0.035"/>
+			<geometry>
+				<cylinder radius="0.06" length="0.0015"/>
+			</geometry>
+		</visual>
+		<visual>
+			<origin rpy="0 0 0" xyz="-0.035 0.035 -0.08"/>
+			<geometry>
+				<cylinder radius="0.005" length="0.09"/>
+			</geometry>
+		</visual>
+		<visual>
+			<origin rpy="0 0 0" xyz="-0.035 -0.035 -0.08"/>
+			<geometry>
+				<cylinder radius="0.005" length="0.09"/>
+			</geometry>
+		</visual>
+		<visual>
+			<origin rpy="0 0 0" xyz="0.0495 0 -0.08"/>
+			<geometry>
+				<cylinder radius="0.005" length="0.09"/>
+			</geometry>
+		</visual>
+		<visual>
+			<origin rpy="0 0 0" xyz="0 0 -0.035"/>
+			<geometry>
+				<mesh filename="package://tugbot_description/meshes/VLP16_base_1.dae"/>
+			</geometry>
+		</visual>
+		<visual>
+			<origin rpy="0 0 0" xyz="0 0 -0.035"/>
+			<geometry>
+				<mesh filename="package://tugbot_description/meshes/VLP16_base_2.dae"/>
+			</geometry>
+		</visual>
+		<visual>
+			<origin rpy="0 0 0" xyz="0 0 -0.035"/>
+			<geometry>
+				<mesh filename="package://tugbot_description/meshes/VLP16_scan.dae"/>
+			</geometry>
+		</visual>
+	</link>
+	<joint name="scan_omni_joint" type="fixed">
+		<origin rpy="0 0 0" xyz="-0.1855 0 0.5318"/>
+		<child link="scan_omni"/>
+		<parent link="base_link"/>
+	</joint>
+
+	<!-- <link name="wheel_front">
+		<origin rpy="1.570796327 0 0" xyz="0.145 0 0.0345"/>
+		<inertial>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<mass value="0.1"/>
+			<inertia ixx="0.0000175" ixy="0" ixz="0" iyy="0.0000175" iyz="0" izz="0.0000175"/>
+		</inertial>
+		<collision>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<geometry>
+				<sphere radius="0.025"/>
+			</geometry>
+		</collision>
+	</link>
+	<link name="wheel_back">
+		<origin rpy="1.570796327 0 0" xyz="-0.225 0 0.035"/>
+		<inertial>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<mass value="0.1"/>
+			<inertia ixx="0.0000175" ixy="0" ixz="0" iyy="0.0000175" iyz="0" izz="0.0000175"/>
+		</inertial>
+		<collision>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<geometry>
+				<sphere radius="0.035"/>
+			</geometry>
+		</collision>
+	</link> -->
+
+	<link name="wheel_left">
+		<origin rpy="-1.570796327 0 0" xyz="0 0.257 0.195"/>
+		<inertial>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<mass value="0.1"/>
+			<inertia ixx="0.0000175" ixy="0" ixz="0" iyy="0.0000175" iyz="0" izz="0.00003125"/>
+		</inertial>
+		<collision>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<geometry>
+				<cylinder radius="0.195" length="0.05"/>
+			</geometry>
+		</collision>
+		<visual>
+			<origin rpy="0 0 0" xyz="0 0 -0.03"/>
+			<geometry>
+				<mesh filename="package://tugbot_description/meshes/wheel/wheel.dae"/>
+			</geometry>
+		</visual>
+	</link>
+	<joint name="wheel_left_joint" type="fixed">
+		<origin rpy="-1.570796327 0 0" xyz="0 0.257 0.195"/>
+		<child link="wheel_left"/>
+		<parent link="base_link"/>
+		<axis xyz="0 0 1"/>
+        <limit effort="9.6" velocity="1.0"/>
+		<dynamics damping="3.0" friction="0.5"/>
+	</joint>
+
+	<link name="wheel_right">
+		<origin rpy="1.570796327 0 0" xyz="0 -0.257 0.195"/>
+		<inertial>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<mass value="0.1"/>
+			<inertia ixx="0.0000175" ixy="0" ixz="0" iyy="0.0000175" iyz="0" izz="0.00003125"/>
+		</inertial>
+		<collision>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<geometry>
+				<cylinder radius="0.195" length="0.05"/>
+			</geometry>
+		</collision>
+		<visual>
+			<origin rpy="0 0 0" xyz="0 0 -0.03"/>
+			<geometry>
+				<mesh filename="package://tugbot_description/meshes/wheel/wheel.dae"/>
+			</geometry>
+		</visual>
+	</link>
+	<joint name="wheel_right_joint" type="fixed">
+		<origin rpy="1.570796327 0 0" xyz="0 -0.257 0.195"/>
+		<child link="wheel_right"/>
+		<parent link="base_link"/>
+		<axis xyz="0 0 -1"/>
+        <limit effort="9.6" velocity="1.0"/>
+		<dynamics damping="3.0" friction="0.5"/>
+	</joint>
+</robot>
+
