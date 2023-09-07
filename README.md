@@ -38,4 +38,12 @@ The `tugbot_ros2_pkgs` package is designed to enable the Tugbot robot to run in 
     source ~/ros2_ws/install/setup.bash
     ```
 
+## Run Ignition Gazebo world
+
+```bash
+ros2 launch tugbot_gazebo tugbot_depot.launch.py 
+```
+
+![image](https://github.com/porizou/tugbot_ros2_pkgs/assets/14184141/42029326-e426-4526-b185-4089b6a24416)
+
     
