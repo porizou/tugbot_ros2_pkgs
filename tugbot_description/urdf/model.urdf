@@ -97,7 +97,7 @@
 		<parent link="base_link"/>
 	</joint>
 
-	<link name="scan_omni">
+	<link name="tugbot/scan_omni/scan_omni">
 		<origin rpy="0 0 0" xyz="-0.1855 0 0.5318"/>
 		<visual>
 			<origin rpy="0 0 0" xyz="0 0 -0.035"/>
@@ -144,7 +144,7 @@
 	</link>
 	<joint name="scan_omni_joint" type="fixed">
 		<origin rpy="0 0 0" xyz="-0.1855 0 0.5318"/>
-		<child link="scan_omni"/>
+		<child link="tugbot/scan_omni/scan_omni"/>
 		<parent link="base_link"/>
 	</joint>
 
