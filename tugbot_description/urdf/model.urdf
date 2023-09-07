@@ -79,21 +79,21 @@
 		<parent link="base_link"/>
 	</joint>
 
-	<link name="scan_front">
+	<link name="tugbot/scan_front/scan_front">
 		<origin rpy="0 0 0" xyz="0.221 0 0.1404"/>
 	</link>
 	<joint name="scan_front_joint" type="fixed">
 		<origin rpy="0 0 0" xyz="0.221 0 0.1404"/>
-		<child link="scan_front"/>
+		<child link="tugbot/scan_front/scan_front"/>
 		<parent link="base_link"/>
 	</joint>
 
-	<link name="scan_back">
+	<link name="tugbot/scan_back/scan_back">
 		<origin rpy="0 0 3.141592654" xyz="-0.2075 0 0.205"/>
 	</link>
 	<joint name="scan_back_joint" type="fixed">
 		<origin rpy="0 0 3.141592654" xyz="-0.2075 0 0.205"/>
-		<child link="scan_back"/>
+		<child link="tugbot/scan_back/scan_back"/>
 		<parent link="base_link"/>
 	</joint>
 
