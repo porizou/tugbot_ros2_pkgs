@@ -26,6 +26,7 @@ def generate_launch_description():
             remappings=[
                 ('/model/tugbot/tf', '/tf'),
                 ('/model/tugbot/odometry', '/odom'),
+                ('/model/tugbot/cmd_vel', '/cmd_vel'),
             ],
             output='screen',
             parameters=[
