@@ -10,6 +10,7 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(tf2_ros REQUIRED)
 find_package(geometry_msgs REQUIRED)
+find_package(tf2_geometry_msgs REQUIRED)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
@@ -24,7 +25,14 @@ if(BUILD_TESTING)
 endif()
 
 add_executable(map_to_odom_publisher src/map_to_odom_publisher.cpp)
-ament_target_dependencies(map_to_odom_publisher rclcpp tf2_ros geometry_msgs)
+ament_target_dependencies(map_to_odom_publisher rclcpp tf2_ros geometry_msgs tf2_geometry_msgs)
 install(TARGETS map_to_odom_publisher DESTINATION lib/${PROJECT_NAME})
+
+install(DIRECTORY
+  launch
+  config
+  rviz
+  DESTINATION share/${PROJECT_NAME}/
+)
 
 ament_package()

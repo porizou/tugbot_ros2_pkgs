@@ -4,6 +4,8 @@
 #include <tf2_ros/transform_broadcaster.h>
 #include <tf2/LinearMath/Transform.h>
 #include <geometry_msgs/msg/transform_stamped.hpp>
+#include <tf2/LinearMath/Quaternion.h>
+#include <tf2_geometry_msgs/tf2_geometry_msgs.h>
 
 class MyTransformNode : public rclcpp::Node
 {
@@ -30,22 +32,34 @@ private:
     geometry_msgs::msg::TransformStamped odom_to_base;
 
     try {
-      map_to_ndt = tfBuffer_.lookupTransform("map", "ndt_base_link", tf2::TimePointZero);
+      map_to_ndt = tfBuffer_.lookupTransform("map", "base_link", tf2::TimePointZero);
       odom_to_base = tfBuffer_.lookupTransform("odom", "base_link", tf2::TimePointZero);
     } catch (tf2::TransformException & ex) {
       RCLCPP_WARN(this->get_logger(), "%s", ex.what());
       return;
     }
 
-    // Compute the new transform (this is a simplified example; you'll need to replace this with your actual logic)
+    // Compute the new transform
     geometry_msgs::msg::TransformStamped map_to_odom;
     map_to_odom.header.stamp = this->now();
     map_to_odom.header.frame_id = "map";
     map_to_odom.child_frame_id = "odom";
+
+    // Translation
     map_to_odom.transform.translation.x = map_to_ndt.transform.translation.x - odom_to_base.transform.translation.x;
     map_to_odom.transform.translation.y = map_to_ndt.transform.translation.y - odom_to_base.transform.translation.y;
     map_to_odom.transform.translation.z = map_to_ndt.transform.translation.z - odom_to_base.transform.translation.z;
-    map_to_odom.transform.rotation = map_to_ndt.transform.rotation;  // Simplified; you may want to compute the rotation differently
+
+    // Rotation
+    tf2::Quaternion q_map_to_ndt, q_odom_to_base, q_diff;
+    tf2::fromMsg(map_to_ndt.transform.rotation, q_map_to_ndt);
+    tf2::fromMsg(odom_to_base.transform.rotation, q_odom_to_base);
+
+    // Compute the difference in rotation
+    q_diff = q_map_to_ndt * q_odom_to_base.inverse();
+    q_diff.normalize();  // Normalize to ensure it's a valid quaternion
+
+    map_to_odom.transform.rotation = tf2::toMsg(q_diff);
 
     // Broadcast the new transform
     tfBroadcaster_->sendTransform(map_to_odom);

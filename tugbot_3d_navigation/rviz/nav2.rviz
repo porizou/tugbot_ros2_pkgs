@@ -5,9 +5,14 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Global Options1
-        - /TF1
         - /TF1/Frames1
         - /TF1/Tree1
+        - /Controller1
+        - /Controller1/VoxelGrid1
+        - /Localization1
+        - /Localization1/NDT1
+        - /Localization1/EKF1
+        - /Pose1
       Splitter Ratio: 0.5833333134651184
     Tree Height: 590
   - Class: rviz_common/Selection
@@ -67,124 +72,42 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        camera0/camera_link:
+          Value: true
+        camera_back:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        camera_front:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        imu_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        tugbot/scan_back/scan_back:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        tugbot/scan_front/scan_front:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        tugbot/scan_omni/scan_omni:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        camera0/camera_optical_link:
+        warnign_light:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        camera1/camera_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        camera1/camera_optical_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        camera2/camera_link:
+        wheel_left:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        camera2/camera_optical_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        camera3/camera_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        camera3/camera_optical_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        camera4/camera_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        camera4/camera_optical_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        camera5/camera_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        camera5/camera_optical_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        gnss_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        sensor_kit_base_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        tamagawa/imu_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        traffic_light_left_camera/camera_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        traffic_light_left_camera/camera_optical_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        traffic_light_right_camera/camera_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        traffic_light_right_camera/camera_optical_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        velodyne_left:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        velodyne_left_base_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        velodyne_rear:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        velodyne_rear_base_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        velodyne_right:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        velodyne_right_base_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        velodyne_top:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        velodyne_top_base_link:
+        wheel_right:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -204,67 +127,27 @@ Visualization Manager:
         All Enabled: false
         base_link:
           Value: true
-        camera0/camera_link:
+        camera_back:
           Value: true
-        camera0/camera_optical_link:
+        camera_front:
           Value: true
-        camera1/camera_link:
-          Value: true
-        camera1/camera_optical_link:
-          Value: true
-        camera2/camera_link:
-          Value: true
-        camera2/camera_optical_link:
-          Value: true
-        camera3/camera_link:
-          Value: true
-        camera3/camera_optical_link:
-          Value: true
-        camera4/camera_link:
-          Value: true
-        camera4/camera_optical_link:
-          Value: true
-        camera5/camera_link:
-          Value: true
-        camera5/camera_optical_link:
-          Value: true
-        gnss_link:
+        imu_link:
           Value: true
         map:
           Value: true
         ndt_base_link:
           Value: true
-        sensor_kit_base_link:
+        tugbot/scan_back/scan_back:
           Value: true
-        tamagawa/imu_link:
-          Value: true
-        traffic_light_left_camera/camera_link:
-          Value: true
-        traffic_light_left_camera/camera_optical_link:
-          Value: true
-        traffic_light_right_camera/camera_link:
-          Value: true
-        traffic_light_right_camera/camera_optical_link:
-          Value: true
-        tugbot/imu_link/imu:
+        tugbot/scan_front/scan_front:
           Value: true
         tugbot/scan_omni/scan_omni:
           Value: true
-        velodyne_left:
+        warnign_light:
           Value: true
-        velodyne_left_base_link:
+        wheel_left:
           Value: true
-        velodyne_rear:
-          Value: true
-        velodyne_rear_base_link:
-          Value: true
-        velodyne_right:
-          Value: true
-        velodyne_right_base_link:
-          Value: true
-        velodyne_top:
-          Value: true
-        velodyne_top_base_link:
+        wheel_right:
           Value: true
       Marker Scale: 1
       Name: TF
@@ -274,51 +157,24 @@ Visualization Manager:
       Tree:
         map:
           base_link:
-            sensor_kit_base_link:
-              camera0/camera_link:
-                camera0/camera_optical_link:
-                  {}
-              camera1/camera_link:
-                camera1/camera_optical_link:
-                  {}
-              camera2/camera_link:
-                camera2/camera_optical_link:
-                  {}
-              camera3/camera_link:
-                camera3/camera_optical_link:
-                  {}
-              camera4/camera_link:
-                camera4/camera_optical_link:
-                  {}
-              camera5/camera_link:
-                camera5/camera_optical_link:
-                  {}
-              gnss_link:
-                {}
-              tamagawa/imu_link:
-                {}
-              traffic_light_left_camera/camera_link:
-                traffic_light_left_camera/camera_optical_link:
-                  {}
-              traffic_light_right_camera/camera_link:
-                traffic_light_right_camera/camera_optical_link:
-                  {}
-              velodyne_left_base_link:
-                velodyne_left:
-                  {}
-              velodyne_right_base_link:
-                velodyne_right:
-                  {}
-              velodyne_top_base_link:
-                velodyne_top:
-                  {}
-            tugbot/imu_link/imu:
+            camera_back:
+              {}
+            camera_front:
+              {}
+            imu_link:
+              {}
+            tugbot/scan_back/scan_back:
+              {}
+            tugbot/scan_front/scan_front:
               {}
             tugbot/scan_omni/scan_omni:
               {}
-            velodyne_rear_base_link:
-              velodyne_rear:
-                {}
+            warnign_light:
+              {}
+            wheel_left:
+              {}
+            wheel_right:
+              {}
           ndt_base_link:
             {}
       Update Interval: 0
@@ -601,17 +457,17 @@ Visualization Manager:
             Value: /local_plan
           Value: true
         - Class: rviz_default_plugins/MarkerArray
-          Enabled: false
+          Enabled: true
           Name: Trajectories
           Namespaces:
-            {}
+            ValidTrajectories: true
           Topic:
             Depth: 5
             Durability Policy: Volatile
             History Policy: Keep Last
             Reliability Policy: Reliable
             Value: /marker
-          Value: false
+          Value: true
         - Alpha: 1
           Class: rviz_default_plugins/Polygon
           Color: 25; 255; 0
@@ -725,6 +581,222 @@ Visualization Manager:
         Reliability Policy: Reliable
         Value: /waypoints
       Value: true
+    - Class: rviz_common/Group
+      Displays:
+        - Class: rviz_common/Group
+          Displays:
+            - Alpha: 0.9990000128746033
+              Axes Length: 1
+              Axes Radius: 0.10000000149011612
+              Class: rviz_default_plugins/PoseWithCovariance
+              Color: 0; 170; 255
+              Covariance:
+                Orientation:
+                  Alpha: 0.5
+                  Color: 255; 255; 127
+                  Color Style: Unique
+                  Frame: Local
+                  Offset: 1
+                  Scale: 1
+                  Value: true
+                Position:
+                  Alpha: 0.30000001192092896
+                  Color: 204; 51; 204
+                  Scale: 1
+                  Value: true
+                Value: true
+              Enabled: true
+              Head Length: 0.4000000059604645
+              Head Radius: 0.6000000238418579
+              Name: PoseWithCovInitial
+              Shaft Length: 0.6000000238418579
+              Shaft Radius: 0.30000001192092896
+              Shape: Arrow
+              Topic:
+                Depth: 5
+                Durability Policy: Volatile
+                Filter size: 10
+                History Policy: Keep Last
+                Reliability Policy: Reliable
+                Value: /localization/pose_estimator/initial_pose_with_covariance
+              Value: true
+            - Alpha: 0.9990000128746033
+              Axes Length: 1
+              Axes Radius: 0.10000000149011612
+              Class: rviz_default_plugins/PoseWithCovariance
+              Color: 0; 255; 0
+              Covariance:
+                Orientation:
+                  Alpha: 0.5
+                  Color: 255; 255; 127
+                  Color Style: Unique
+                  Frame: Local
+                  Offset: 1
+                  Scale: 1
+                  Value: true
+                Position:
+                  Alpha: 0.30000001192092896
+                  Color: 204; 51; 204
+                  Scale: 1
+                  Value: true
+                Value: true
+              Enabled: true
+              Head Length: 0.4000000059604645
+              Head Radius: 0.6000000238418579
+              Name: PoseWithCovAligned
+              Shaft Length: 0.6000000238418579
+              Shaft Radius: 0.30000001192092896
+              Shape: Arrow
+              Topic:
+                Depth: 5
+                Durability Policy: Volatile
+                Filter size: 10
+                History Policy: Keep Last
+                Reliability Policy: Reliable
+                Value: /localization/pose_estimator/pose_with_covariance
+              Value: true
+            - Buffer Size: 200
+              Class: rviz_plugins::PoseHistory
+              Enabled: true
+              Line:
+                Alpha: 0.9990000128746033
+                Color: 170; 255; 127
+                Value: true
+                Width: 0.10000000149011612
+              Name: PoseHistory
+              Topic:
+                Depth: 5
+                Durability Policy: Volatile
+                Filter size: 10
+                History Policy: Keep Last
+                Reliability Policy: Reliable
+                Value: /localization/pose_estimator/pose
+              Value: true
+            - Alpha: 0.9990000128746033
+              Autocompute Intensity Bounds: true
+              Autocompute Value Bounds:
+                Max Value: 10
+                Min Value: -10
+                Value: true
+              Axis: Z
+              Channel Name: intensity
+              Class: rviz_default_plugins/PointCloud2
+              Color: 0; 255; 255
+              Color Transformer: Intensity
+              Decay Time: 0
+              Enabled: true
+              Invert Rainbow: false
+              Max Color: 255; 255; 255
+              Max Intensity: 4096
+              Min Color: 0; 0; 0
+              Min Intensity: 0
+              Name: Initial
+              Position Transformer: XYZ
+              Selectable: false
+              Size (Pixels): 10
+              Size (m): 0.5
+              Style: Points
+              Topic:
+                Depth: 5
+                Durability Policy: Volatile
+                Filter size: 10
+                History Policy: Keep Last
+                Reliability Policy: Best Effort
+                Value: /localization/util/downsample/pointcloud
+              Use Fixed Frame: true
+              Use rainbow: true
+              Value: true
+            - Alpha: 0.9990000128746033
+              Autocompute Intensity Bounds: true
+              Autocompute Value Bounds:
+                Max Value: 10
+                Min Value: -10
+                Value: true
+              Axis: Z
+              Channel Name: intensity
+              Class: rviz_default_plugins/PointCloud2
+              Color: 85; 255; 0
+              Color Transformer: FlatColor
+              Decay Time: 0
+              Enabled: true
+              Invert Rainbow: false
+              Max Color: 85; 255; 127
+              Max Intensity: 0
+              Min Color: 0; 0; 0
+              Min Intensity: 0
+              Name: Aligned
+              Position Transformer: XYZ
+              Selectable: false
+              Size (Pixels): 10
+              Size (m): 0.10000000149011612
+              Style: Squares
+              Topic:
+                Depth: 5
+                Durability Policy: Volatile
+                Filter size: 10
+                History Policy: Keep Last
+                Reliability Policy: Reliable
+                Value: /localization/pose_estimator/points_aligned
+              Use Fixed Frame: true
+              Use rainbow: true
+              Value: true
+            - Class: rviz_default_plugins/MarkerArray
+              Enabled: true
+              Name: MonteCarloInitialPose
+              Namespaces:
+                {}
+              Topic:
+                Depth: 5
+                Durability Policy: Volatile
+                History Policy: Keep Last
+                Reliability Policy: Reliable
+                Value: /localization/pose_estimator/monte_carlo_initial_pose_marker
+              Value: true
+          Enabled: true
+          Name: NDT
+        - Class: rviz_common/Group
+          Displays:
+            - Buffer Size: 1000
+              Class: rviz_plugins::PoseHistory
+              Enabled: true
+              Line:
+                Alpha: 0.9990000128746033
+                Color: 0; 255; 255
+                Value: true
+                Width: 0.10000000149011612
+              Name: PoseHistory
+              Topic:
+                Depth: 5
+                Durability Policy: Volatile
+                Filter size: 10
+                History Policy: Keep Last
+                Reliability Policy: Reliable
+                Value: /localization/pose_twist_fusion_filter/pose
+              Value: true
+          Enabled: true
+          Name: EKF
+      Enabled: true
+      Name: Localization
+    - Alpha: 1
+      Axes Length: 1
+      Axes Radius: 0.10000000149011612
+      Class: rviz_default_plugins/Pose
+      Color: 255; 25; 0
+      Enabled: true
+      Head Length: 0.30000001192092896
+      Head Radius: 0.10000000149011612
+      Name: Pose
+      Shaft Length: 1
+      Shaft Radius: 0.05000000074505806
+      Shape: Arrow
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        Filter size: 10
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /goal_pose
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -762,31 +834,36 @@ Visualization Manager:
   Value: true
   Views:
     Current:
-      Angle: 0
-      Class: rviz_default_plugins/TopDownOrtho
+      Class: rviz_default_plugins/Orbit
+      Distance: 8.567499160766602
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
+      Focal Point:
+        X: 0.7893669009208679
+        Y: -0.13081642985343933
+        Z: -0.3709981143474579
+      Focal Shape Fixed Size: false
+      Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Scale: 48.87112808227539
+      Pitch: 0.5753985643386841
       Target Frame: <Fixed Frame>
-      Value: TopDownOrtho (rviz_default_plugins)
-      X: 0.45103228092193604
-      Y: 0.052958808839321136
+      Value: Orbit (rviz_default_plugins)
+      Yaw: 0.8453982472419739
     Saved: ~
 Window Geometry:
   Displays:
     collapsed: false
   Height: 1136
   Hide Left Dock: false
-  Hide Right Dock: false
+  Hide Right Dock: true
   Navigation 2:
     collapsed: false
-  QMainWindow State: 000000ff00000000fd00000004000000000000016a00000416fc020000000afb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000003d0000028b000000c900fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb00000018004e0061007600690067006100740069006f006e0020003201000002ce000001850000013900fffffffb0000001e005200650061006c00730065006e0073006500430061006d00650072006100000002c6000000c10000002800ffffff000000010000010f00000416fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073010000003d00000416000000a400fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000004420000003efc0100000002fb0000000800540069006d00650100000000000004420000000000000000fb0000000800540069006d00650100000000000004500000000000000000000004b50000041600000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd00000004000000000000016a00000416fc020000000afb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000003d0000028b000000c900fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb00000018004e0061007600690067006100740069006f006e0020003201000002ce000001850000012600fffffffb0000001e005200650061006c00730065006e0073006500430061006d00650072006100000002c6000000c10000002800ffffff000000010000010f00000416fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000003d00000416000000a400fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000004420000003efc0100000002fb0000000800540069006d00650100000000000004420000000000000000fb0000000800540069006d00650100000000000004500000000000000000000005ca0000041600000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   RealsenseCamera:
     collapsed: false
   Selection:
@@ -794,7 +871,7 @@ Window Geometry:
   Tool Properties:
     collapsed: false
   Views:
-    collapsed: false
+    collapsed: true
   Width: 1850
   X: 70
   Y: 27
